@@ -8,6 +8,7 @@ The goal is not to make Codex negative. The goal is to make Codex more honest wh
 
 - Add sharper rules for common failure modes.
 - Improve examples with realistic prompts.
+- Improve launch assets that help people understand or share the project.
 - Reduce vague wording.
 - Make the skill easier to install or validate.
 - Improve compatibility with Codex skill conventions.

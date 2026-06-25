@@ -47,6 +47,16 @@ def main() -> int:
         fail(errors, "Missing assets/banner.svg")
     if not (root / "assets" / "mark.svg").exists():
         fail(errors, "Missing assets/mark.svg")
+    if not (root / "assets" / "social-card.svg").exists():
+        fail(errors, "Missing assets/social-card.svg")
+    if not (root / "prompts" / "universal.md").exists():
+        fail(errors, "Missing prompts/universal.md")
+    if not (root / "demo" / "before-after.md").exists():
+        fail(errors, "Missing demo/before-after.md")
+    if not (root / "launch" / "social-posts.md").exists():
+        fail(errors, "Missing launch/social-posts.md")
+    if not (root / "launch" / "submission-targets.md").exists():
+        fail(errors, "Missing launch/submission-targets.md")
 
     if skill_md.exists():
         text = skill_md.read_text(encoding="utf-8")
@@ -84,6 +94,17 @@ def main() -> int:
             fail(errors, "README.md should display the visual banner")
         if "github/actions/workflow/status" not in readme_text:
             fail(errors, "README.md should show the validation badge")
+        if "prompts/universal.md" not in readme_text:
+            fail(errors, "README.md should link the universal prompt")
+        if "Your AI assistant agrees too much" not in readme_text:
+            fail(errors, "README.md should lead with the shareable hook")
+
+    universal_prompt = root / "prompts" / "universal.md"
+    if universal_prompt.exists():
+        prompt_text = universal_prompt.read_text(encoding="utf-8")
+        for phrase in ["Pushback mode", "Separate \"this can be done\" from \"this should be done\"", "Do not be rude"]:
+            if phrase not in prompt_text:
+                fail(errors, f"Universal prompt missing phrase: {phrase}")
 
     if errors:
         print("Validation failed:")

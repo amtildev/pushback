@@ -5,12 +5,16 @@
     <a href="https://github.com/amtildev/pushback/actions/workflows/validate.yml"><img alt="Validation" src="https://img.shields.io/github/actions/workflow/status/amtildev/pushback/validate.yml?branch=main&label=validation"></a>
     <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/amtildev/pushback"></a>
     <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-69E0B5">
+    <img alt="Universal prompt" src="https://img.shields.io/badge/universal-prompt-E56B7F">
     <img alt="Invoke with $pushback" src="https://img.shields.io/badge/invoke-%24pushback-E8C547">
   </p>
 
-  <p><strong>Truth-seeking mode for coding agents.</strong></p>
-  <p>Make Codex challenge weak assumptions before it agrees, edits, deletes, buys, ships, or publishes.</p>
+  <p><strong>Your AI assistant agrees too much.</strong></p>
+  <p>Pushback makes coding agents challenge weak assumptions before they agree, edit, delete, buy, ship, or publish.</p>
 </div>
+
+> [!IMPORTANT]
+> New to Codex skills? You can still use Pushback today. Copy the universal prompt from [prompts/universal.md](prompts/universal.md) into ChatGPT, Claude, Cursor, or your team AI rules.
 
 ## Why Pushback Exists
 
@@ -28,7 +32,25 @@ LLMs are tuned to be helpful, polite, and cooperative. That is useful until the 
 > [!TIP]
 > Use `$pushback` when agreement would be cheap but being wrong would be expensive.
 
-## Install
+## Quick Start
+
+### Use It In Codex
+
+```text
+Use $pushback to challenge this plan before we do it.
+```
+
+### Use It Anywhere Else
+
+Copy the short prompt:
+
+```text
+Push back before agreeing. Give a verdict, test my hidden assumption, name the real risk, and offer a better path. Do not be contrarian for show.
+```
+
+For the full version, see [prompts/universal.md](prompts/universal.md).
+
+## Install The Codex Skill
 
 Clone or download this repo, then copy the skill folder into your Codex skills directory.
 
@@ -49,9 +71,9 @@ If your Codex skill installer supports GitHub paths, point it at:
 skills/pushback
 ```
 
-## Use
+## Use Cases
 
-Invoke it directly in a Codex prompt:
+Invoke it when you want a real counterparty:
 
 ```text
 Use $pushback to sanity-check this plan before implementing it.
@@ -71,6 +93,8 @@ Use $pushback before touching production. Inspect first, then tell me the risk.
 |---|---|
 | "This sounds like a strong direction. I can implement it." | "Partly. The implementation is possible, but the premise is weak because the repo has no evidence users need this flow. The smallest useful test is to instrument the existing path before adding a new one." |
 
+More examples: [demo/before-after.md](demo/before-after.md).
+
 ## Good Use Cases
 
 | Area | What Pushback should catch |
@@ -88,6 +112,14 @@ Use $pushback before touching production. Inspect first, then tell me the risk.
 - Bypassing model safety behavior
 - Replacing real domain experts for legal, medical, financial, or security decisions
 
+## Share It
+
+If Pushback saves you from one bad plan, share it with someone whose AI assistant agrees too quickly.
+
+- Social card: [assets/social-card.svg](assets/social-card.svg)
+- Ready-to-post launch copy: [launch/social-posts.md](launch/social-posts.md)
+- Submission targets: [launch/submission-targets.md](launch/submission-targets.md)
+
 ## Project Layout
 
 ```text
@@ -95,6 +127,14 @@ pushback/
   assets/
     banner.svg
     mark.svg
+    social-card.svg
+  demo/
+    before-after.md
+  launch/
+    social-posts.md
+    submission-targets.md
+  prompts/
+    universal.md
   skills/pushback/
     SKILL.md
     agents/openai.yaml
