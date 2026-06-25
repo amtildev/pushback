@@ -1,0 +1,61 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Pushback</title>
+  <desc id="desc">A repository banner for Pushback, a Codex skill that challenges weak assumptions before agreeing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111817"/>
+      <stop offset="0.48" stop-color="#182420"/>
+      <stop offset="1" stop-color="#251922"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="150" y1="70" x2="1050" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#69E0B5"/>
+      <stop offset="0.56" stop-color="#E8C547"/>
+      <stop offset="1" stop-color="#E56B7F"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#050706" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="34" fill="url(#bg)"/>
+  <path d="M0 318C154 257 247 336 394 277C532 221 572 83 733 89C894 95 945 258 1200 191V420H0V318Z" fill="#E8C547" opacity="0.08"/>
+  <path d="M-30 82C127 146 248 22 417 76C592 132 604 250 778 276C949 301 1022 198 1230 255" stroke="url(#accent)" stroke-width="2.5" opacity="0.55"/>
+  <circle cx="1042" cy="94" r="72" fill="#69E0B5" opacity="0.08"/>
+  <circle cx="968" cy="330" r="105" fill="#E56B7F" opacity="0.06"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="86" y="74" width="1028" height="272" rx="26" fill="#F3F0E7"/>
+    <rect x="86" y="74" width="1028" height="272" rx="26" stroke="#DDD6C8" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(130 115)">
+    <rect x="0" y="0" width="92" height="92" rx="24" fill="#131918"/>
+    <path d="M25 50H61.5L48 64L55.8 71.8L83 44.6L55.8 17.4L48 25.2L61.5 39H25V50Z" fill="#69E0B5"/>
+    <path d="M22 24H38V35H22V24ZM22 58H48V69H22V58Z" fill="#E8C547"/>
+  </g>
+
+  <text x="250" y="154" fill="#131918" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="72" font-weight="800">Pushback</text>
+  <text x="254" y="202" fill="#35423D" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="500">Truth-seeking mode for coding agents</text>
+  <text x="254" y="244" fill="#5A625E" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400">Challenge weak assumptions before the assistant agrees, edits, deletes, buys, ships, or publishes.</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="254" y="278" width="112" height="38" rx="19" fill="#DDF7EC"/>
+    <text x="278" y="303" fill="#17634C">VERDICT</text>
+    <rect x="382" y="278" width="156" height="38" rx="19" fill="#F7EDC4"/>
+    <text x="407" y="303" fill="#6D560B">ASSUMPTION</text>
+    <rect x="554" y="278" width="86" height="38" rx="19" fill="#F8D8DD"/>
+    <text x="581" y="303" fill="#8C2433">RISK</text>
+    <rect x="656" y="278" width="150" height="38" rx="19" fill="#E4E8E1"/>
+    <text x="681" y="303" fill="#3A473E">BETTER PATH</text>
+  </g>
+
+  <g transform="translate(838 122)">
+    <rect x="0" y="0" width="224" height="170" rx="18" fill="#18201E"/>
+    <rect x="20" y="22" width="72" height="10" rx="5" fill="#E8C547"/>
+    <rect x="20" y="52" width="184" height="12" rx="6" fill="#F3F0E7" opacity="0.82"/>
+    <rect x="20" y="78" width="146" height="12" rx="6" fill="#F3F0E7" opacity="0.62"/>
+    <rect x="20" y="118" width="55" height="18" rx="9" fill="#E56B7F"/>
+    <path d="M96 127H174" stroke="#69E0B5" stroke-width="8" stroke-linecap="round"/>
+    <path d="M160 111L178 127L160 143" stroke="#69E0B5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

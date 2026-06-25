@@ -43,6 +43,10 @@ def main() -> int:
         fail(errors, "Missing README.md")
     if not (root / "LICENSE").exists():
         fail(errors, "Missing LICENSE")
+    if not (root / "assets" / "banner.svg").exists():
+        fail(errors, "Missing assets/banner.svg")
+    if not (root / "assets" / "mark.svg").exists():
+        fail(errors, "Missing assets/mark.svg")
 
     if skill_md.exists():
         text = skill_md.read_text(encoding="utf-8")
@@ -72,6 +76,14 @@ def main() -> int:
             fail(errors, "agents/openai.yaml default_prompt should mention $pushback")
         if "Challenge weak assumptions" not in ui_text:
             fail(errors, "agents/openai.yaml should keep the current short_description positioning")
+
+    readme = root / "README.md"
+    if readme.exists():
+        readme_text = readme.read_text(encoding="utf-8")
+        if "assets/banner.svg" not in readme_text:
+            fail(errors, "README.md should display the visual banner")
+        if "github/actions/workflow/status" not in readme_text:
+            fail(errors, "README.md should show the validation badge")
 
     if errors:
         print("Validation failed:")

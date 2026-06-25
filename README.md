@@ -1,42 +1,49 @@
-# Pushback
+<div align="center">
+  <img src="assets/banner.svg" alt="Pushback: truth-seeking mode for coding agents" width="100%">
 
-Stop your coding agent from nodding along.
+  <p>
+    <a href="https://github.com/AhmedAmtil-coder/pushback/actions/workflows/validate.yml"><img alt="Validation" src="https://img.shields.io/github/actions/workflow/status/AhmedAmtil-coder/pushback/validate.yml?branch=main&label=validation"></a>
+    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/AhmedAmtil-coder/pushback"></a>
+    <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-69E0B5">
+    <img alt="Invoke with $pushback" src="https://img.shields.io/badge/invoke-%24pushback-E8C547">
+  </p>
 
-`pushback` is a Codex skill that makes an agent challenge weak assumptions before agreeing. It is for moments when the default "helpful assistant" behavior is too agreeable: product ideas, architecture decisions, risky shell commands, live changes, pricing calls, launches, and any plan that needs a real counterparty.
+  <p><strong>Truth-seeking mode for coding agents.</strong></p>
+  <p>Make Codex challenge weak assumptions before it agrees, edits, deletes, buys, ships, or publishes.</p>
+</div>
 
-## The Problem
+## Why Pushback Exists
 
-LLMs are often tuned to be helpful, polite, and cooperative. That is useful until the assistant starts validating a bad premise, skipping the hard question, or saying "great idea" before inspecting the evidence.
+LLMs are tuned to be helpful, polite, and cooperative. That is useful until the assistant validates a bad premise, skips the hard question, or says "great idea" before checking the evidence.
 
-This skill gives Codex a compact operating protocol:
+`pushback` gives Codex a compact counterparty protocol:
 
-- state a verdict instead of flattering the premise
-- surface hidden assumptions
-- name concrete risks
-- separate "I can do this" from "this is a good idea"
-- offer a better path when the request is weak
-- slow down before destructive, expensive, or public actions
+| Instead of this | Pushback does this |
+|---|---|
+| "Sounds good, I will implement it." | Separates feasibility from judgment. |
+| "Great idea." | Tests the hidden assumption first. |
+| "I can do that." | Names the risk before action. |
+| "Here is the plan." | Offers the smaller, safer, sharper path. |
 
-It does not make the assistant hostile. It makes disagreement useful.
+> [!TIP]
+> Use `$pushback` when agreement would be cheap but being wrong would be expensive.
 
 ## Install
 
 Clone or download this repo, then copy the skill folder into your Codex skills directory.
 
-PowerShell:
-
 ```powershell
 Copy-Item -Recurse -Force .\skills\pushback "$env:USERPROFILE\.codex\skills\pushback"
 ```
 
-Bash:
+On macOS or Linux:
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -R ./skills/pushback ~/.codex/skills/pushback
 ```
 
-If you use a Codex skill installer that supports GitHub paths, point it at:
+If your Codex skill installer supports GitHub paths, point it at:
 
 ```text
 skills/pushback
@@ -60,31 +67,23 @@ Use $pushback before touching production. Inspect first, then tell me the risk.
 
 ## What Changes
 
-Without the skill:
-
-```text
-This sounds like a strong direction. I can implement it.
-```
-
-With the skill:
-
-```text
-Partly. The implementation is possible, but the premise is weak because the current repo has no evidence that users need this flow. The smallest useful test is to instrument the existing path before adding a new one.
-```
+| Default assistant | With Pushback |
+|---|---|
+| "This sounds like a strong direction. I can implement it." | "Partly. The implementation is possible, but the premise is weak because the repo has no evidence users need this flow. The smallest useful test is to instrument the existing path before adding a new one." |
 
 ## Good Use Cases
 
-- Product and startup idea evaluation
-- Technical architecture review
-- Code-change sanity checks
-- Security-sensitive or destructive operations
-- Pricing, launch, or monetization decisions
-- Debugging plans where the first theory may be wrong
-- Any prompt where you want the assistant to say "no" when needed
+| Area | What Pushback should catch |
+|---|---|
+| Product ideas | Distribution gaps, fake urgency, weak demand signals |
+| Architecture | Complexity, lock-in, migration risk, maintainability cost |
+| Code changes | Edge cases, regressions, missing tests, pattern drift |
+| Risky operations | Destructive commands, live systems, secrets, recurring billing |
+| Launch plans | Unclear audience, weak proof, vague success criteria |
 
 ## Not For
 
-- Forcing the agent to be rude
+- Making the agent rude
 - Generating objections for their own sake
 - Bypassing model safety behavior
 - Replacing real domain experts for legal, medical, financial, or security decisions
@@ -93,6 +92,9 @@ Partly. The implementation is possible, but the premise is weak because the curr
 
 ```text
 pushback/
+  assets/
+    banner.svg
+    mark.svg
   skills/pushback/
     SKILL.md
     agents/openai.yaml

@@ -1,0 +1,8 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Pushback mark</title>
+  <desc id="desc">A compact mark with an arrow pushing back against lines.</desc>
+  <rect x="8" y="8" width="112" height="112" rx="30" fill="#131918"/>
+  <path d="M31 69H82.5L64 87.5L74.4 97.9L111 61.3L74.4 24.7L64 35.1L82.5 53H31V69Z" fill="#69E0B5"/>
+  <path d="M27 32H49V47H27V32ZM27 83H63V98H27V83Z" fill="#E8C547"/>
+  <path d="M10 34C29 14 53 7 82 10" stroke="#E56B7F" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+</svg>
