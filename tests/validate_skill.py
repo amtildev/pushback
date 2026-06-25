@@ -58,6 +58,29 @@ def main() -> int:
     if not (root / "launch" / "submission-targets.md").exists():
         fail(errors, "Missing launch/submission-targets.md")
 
+    required_adapter_files = [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "GEMINI.md",
+        ".hermes.md",
+        ".cursorrules",
+        ".windsurfrules",
+        "CONVENTIONS.md",
+        "SOUL.md",
+        ".cursor/rules/pushback.mdc",
+        ".clinerules/pushback.md",
+        ".roo/rules/pushback.md",
+        ".kilo/rules/pushback.md",
+        "kilo.jsonc",
+        ".github/copilot-instructions.md",
+        "rules/pushback.md",
+        "scripts/install.py",
+        "docs/agent-support.md",
+    ]
+    for relative_path in required_adapter_files:
+        if not (root / relative_path).exists():
+            fail(errors, f"Missing adapter file: {relative_path}")
+
     if skill_md.exists():
         text = skill_md.read_text(encoding="utf-8")
         frontmatter = parse_frontmatter(text, errors)
@@ -98,6 +121,11 @@ def main() -> int:
             fail(errors, "README.md should link the universal prompt")
         if "Your AI assistant agrees too much" not in readme_text:
             fail(errors, "README.md should lead with the shareable hook")
+        if "docs/agent-support.md" not in readme_text:
+            fail(errors, "README.md should link agent support docs")
+        for agent_name in ["Claude Code", "Cursor", "Gemini CLI", "GitHub Copilot", "Cline", "Roo Code", "Kilo Code", "Hermes", "OpenCode", "OpenClaw"]:
+            if agent_name not in readme_text:
+                fail(errors, f"README.md missing agent mention: {agent_name}")
 
     universal_prompt = root / "prompts" / "universal.md"
     if universal_prompt.exists():
@@ -105,6 +133,19 @@ def main() -> int:
         for phrase in ["Pushback mode", "Separate \"this can be done\" from \"this should be done\"", "Do not be rude"]:
             if phrase not in prompt_text:
                 fail(errors, f"Universal prompt missing phrase: {phrase}")
+
+    canonical_rule = root / "rules" / "pushback.md"
+    if canonical_rule.exists():
+        rule_text = canonical_rule.read_text(encoding="utf-8")
+        for phrase in ["Pushback Mode", "truth-seeking", "Pause before destructive commands"]:
+            if phrase not in rule_text:
+                fail(errors, f"Canonical rule missing phrase: {phrase}")
+
+    for relative_path in required_adapter_files:
+        if relative_path.endswith((".md", ".mdc", ".md")) and (root / relative_path).exists():
+            text = (root / relative_path).read_text(encoding="utf-8")
+            if "Pushback" not in text:
+                fail(errors, f"Adapter should mention Pushback: {relative_path}")
 
     if errors:
         print("Validation failed:")

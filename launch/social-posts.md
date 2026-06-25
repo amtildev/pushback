@@ -7,7 +7,7 @@ Use these as starting points. Keep the repo link in the first reply on X if you 
 ```text
 Your AI assistant agrees too much.
 
-So I made Pushback: a tiny open-source prompt/skill that makes coding agents challenge weak assumptions before they agree, edit, delete, buy, ship, or publish.
+So I made Pushback: a tiny open-source prompt, skill, and rule pack that makes coding agents challenge weak assumptions before they agree, edit, delete, buy, ship, or publish.
 
 It is not a "be rude" prompt. It is a "tell me when my premise is bad" prompt.
 
@@ -60,6 +60,7 @@ The goal is to stop it from being cheaply agreeable when being wrong is expensiv
 It works as:
 
 - a Codex skill
+- Claude Code / Cursor / Gemini / Copilot / Cline / Roo / Kilo rules
 - a copy-paste prompt
 - project rules for other coding agents
 - a team guideline for AI-assisted work
@@ -112,7 +113,7 @@ I kept running into the same issue with AI coding agents: they are very good at 
 
 So I made Pushback.
 
-It is a tiny open-source Codex skill plus a universal copy-paste prompt. It makes the assistant give a verdict, identify the hidden assumption, name the risk, and suggest a better path before blindly implementing.
+It is a tiny open-source Codex skill, universal copy-paste prompt, and multi-agent rule pack. It makes the assistant give a verdict, identify the hidden assumption, name the risk, and suggest a better path before blindly implementing.
 
 It is meant for product ideas, risky shell commands, architecture rewrites, production changes, and "is this actually a good idea?" moments.
 

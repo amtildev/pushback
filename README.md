@@ -6,6 +6,7 @@
     <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/amtildev/pushback"></a>
     <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-69E0B5">
     <img alt="Universal prompt" src="https://img.shields.io/badge/universal-prompt-E56B7F">
+    <img alt="Multi-agent rules" src="https://img.shields.io/badge/multi--agent-rules-8AB4F8">
     <img alt="Invoke with $pushback" src="https://img.shields.io/badge/invoke-%24pushback-E8C547">
   </p>
 
@@ -14,7 +15,7 @@
 </div>
 
 > [!IMPORTANT]
-> New to Codex skills? You can still use Pushback today. Copy the universal prompt from [prompts/universal.md](prompts/universal.md) into ChatGPT, Claude, Cursor, or your team AI rules.
+> New to Codex skills? You can still use Pushback today. Copy the universal prompt from [prompts/universal.md](prompts/universal.md), or install the multi-agent rule pack from [docs/agent-support.md](docs/agent-support.md).
 
 ## Why Pushback Exists
 
@@ -34,6 +35,14 @@ LLMs are tuned to be helpful, polite, and cooperative. That is useful until the 
 
 ## Quick Start
 
+### Install It For Any Coding Agent
+
+```bash
+python scripts/install.py --target /path/to/your/project --agents all
+```
+
+This installs adapters for Codex, Claude Code, Cursor, Gemini CLI, GitHub Copilot, Cline, Roo Code, Kilo Code/KiloClaw, Hermes, OpenCode, OpenClaw-style agents, Windsurf, and Aider.
+
 ### Use It In Codex
 
 ```text
@@ -49,6 +58,27 @@ Push back before agreeing. Give a verdict, test my hidden assumption, name the r
 ```
 
 For the full version, see [prompts/universal.md](prompts/universal.md).
+
+## Works With
+
+| Agent or tool | Pushback support |
+|---|---|
+| Codex | `skills/pushback/`, `AGENTS.md` |
+| Claude Code | `CLAUDE.md` |
+| Cursor | `.cursor/rules/pushback.mdc`, `.cursorrules` |
+| Gemini CLI | `GEMINI.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Cline | `.clinerules/pushback.md`, `AGENTS.md` |
+| Roo Code | `.roo/rules/pushback.md`, `AGENTS.md` |
+| Kilo Code / KiloClaw | `kilo.jsonc`, `.kilo/rules/pushback.md` |
+| Hermes Agent | `.hermes.md`, `AGENTS.md` |
+| OpenCode | `AGENTS.md` |
+| OpenClaw-style agents | `AGENTS.md`, `SOUL.md` |
+| Windsurf | `.windsurfrules` |
+| Aider | `CONVENTIONS.md` |
+| Anything else | [prompts/universal.md](prompts/universal.md) |
+
+Full details: [docs/agent-support.md](docs/agent-support.md).
 
 ## Install The Codex Skill
 
@@ -124,6 +154,18 @@ If Pushback saves you from one bad plan, share it with someone whose AI assistan
 
 ```text
 pushback/
+  .clinerules/pushback.md
+  .cursor/rules/pushback.mdc
+  .github/copilot-instructions.md
+  .hermes.md
+  .kilo/rules/pushback.md
+  .roo/rules/pushback.md
+  .windsurfrules
+  AGENTS.md
+  CLAUDE.md
+  GEMINI.md
+  CONVENTIONS.md
+  SOUL.md
   assets/
     banner.svg
     mark.svg
@@ -135,6 +177,10 @@ pushback/
     submission-targets.md
   prompts/
     universal.md
+  rules/
+    pushback.md
+  scripts/
+    install.py
   skills/pushback/
     SKILL.md
     agents/openai.yaml
