@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pushback"
+  short_description: "Challenge weak assumptions before agreeing"
+  default_prompt: "Use $pushback to challenge my assumptions and give a direct, evidence-aware answer."
