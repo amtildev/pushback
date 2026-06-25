@@ -2,8 +2,8 @@
   <img src="assets/banner.svg" alt="Pushback: truth-seeking mode for coding agents" width="100%">
 
   <p>
-    <a href="https://github.com/AhmedAmtil-coder/pushback/actions/workflows/validate.yml"><img alt="Validation" src="https://img.shields.io/github/actions/workflow/status/AhmedAmtil-coder/pushback/validate.yml?branch=main&label=validation"></a>
-    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/AhmedAmtil-coder/pushback"></a>
+    <a href="https://github.com/amtildev/pushback/actions/workflows/validate.yml"><img alt="Validation" src="https://img.shields.io/github/actions/workflow/status/amtildev/pushback/validate.yml?branch=main&label=validation"></a>
+    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/amtildev/pushback"></a>
     <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-69E0B5">
     <img alt="Invoke with $pushback" src="https://img.shields.io/badge/invoke-%24pushback-E8C547">
   </p>
